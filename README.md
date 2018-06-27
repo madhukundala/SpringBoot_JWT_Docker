@@ -1,7 +1,7 @@
-SpringBoot_JWT_Docker
+Application SpringBoot_JWT_Docker
 
 
-Currently uses h2 DB 
+Currently we uses h2 DB 
 to configure ur owm mysql db , can change the configurations in properties file 
 and to deploy in docker , can use the docker script where it will be deployed in the docker container .
 
@@ -33,7 +33,11 @@ Need to insert roles in the table and then only app can be accessed
 
 If using m2 db then its is not required but need to register when ever server restarts .
 
+Swagger : 
+http://localhost:8080/swagger-ui.html#/
 
+Healh check 
+http://localhost:8080/actuator/health
 
 To sign up 
 

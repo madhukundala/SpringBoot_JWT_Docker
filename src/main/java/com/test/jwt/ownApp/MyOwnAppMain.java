@@ -20,7 +20,6 @@ public class MyOwnAppMain
 	}
 
 	public static void main(String[] args) {
-		System.out.println("enteringggg myOWN App Madhu _) ");
 		SpringApplication.run(MyOwnAppMain.class, args);
 	}
 }
