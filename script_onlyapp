@@ -1,0 +1,29 @@
+#!/bin/bash
+ 
+echo hello Madhu !!!!
+
+
+
+docker stop myownapp 
+
+echo myownapp app stopped
+
+docker system prune -a < <(yes y)
+
+
+mvn clean install 
+
+echo mvn clean completed 
+
+docker build . -t myownapp
+
+docker run -p 8080:8080 --name myownapp --link mysql-standalone:mysql -d myownapp
+
+echo myOwnApp app created 
+
+
+
+
+
+
+

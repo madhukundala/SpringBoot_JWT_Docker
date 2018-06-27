@@ -1,0 +1,35 @@
+#!/bin/bash
+ 
+echo hello Madhu !!!!
+
+docker stop mysql-standalone
+
+echo mysql stopped
+
+docker stop myownapp 
+
+echo myownapp app stopped
+
+docker system prune -a < <(yes y)
+
+
+docker run --name mysql-standalone -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=testDB -e MYSQL_USER=sa -e MYSQL_PASSWORD=password -d mysql:5.6
+
+echo mysql created 
+
+mvn clean install 
+
+echo mvn clean completed 
+
+docker build . -t myownapp
+
+docker run -p 8080:8080 --name myownapp --link mysql-standalone:mysql -d myownapp
+
+echo myOwnApp app created 
+
+
+
+
+
+
+
