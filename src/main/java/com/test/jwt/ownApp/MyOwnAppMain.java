@@ -16,7 +16,6 @@ public class MyOwnAppMain
 {
 	@PostConstruct
 	void init() {
-		System.out.println("post contruct ");
 		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
 	}
 
