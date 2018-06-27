@@ -1,10 +1,9 @@
 Application SpringBoot_JWT_Docker
 
 
-Currently we uses h2 DB 
-to configure ur owm mysql db , can change the configurations in properties file 
-and to deploy in docker , can use the docker script where it will be deployed in the docker container .
-
+Currently we uses h2 DB as inmemory Database .
+To configure ur owm mysql db , can change the configurations in properties file 
+and to deploy in docker , can use the docker script where the app and mysql will be deployed in the docker container .
 
 
 To install and run   mysql in docker container
@@ -54,3 +53,21 @@ res : {
     "success": true,
     "message": "User registered successfully"
 }
+
+
+http://localhost:8080/app/auth/signin
+req :{
+	"usernameOrEmail": "test123",
+	"password": "test123"
+}
+
+REs : {
+    "accessToken": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTMwMDgwNDc3LCJleHAiOjE1MzA2ODUyNzd9.LeULRlg3h4yOx-B7HP0beysdDLVyl-p2hIItbb1jjZEpCbBkbqq7avksC1NxHesbOvpQoHG-tHliiHw1oo9vQA",
+    "tokenType": "Bearer"
+}
+
+
+After this use the token to acces the other end points using authorizations as OAuth 2.0 postman 
+
+For Any queries can contact me on below details :
+Email id : madhu.kundala@gmail.com . 
