@@ -40,7 +40,7 @@ import com.test.jwt.ownApp.services.PollService;
  * Unit test for simple App.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = WebEnvironment.MOCK, classes = MyOwnAppMain.class)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, classes = MyOwnAppMain.class)
 @AutoConfigureMockMvc
 @TestPropertySource(locations = "classpath:application.properties")
 public class AppTest {

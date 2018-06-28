@@ -16,13 +16,13 @@ public class LoggingAspect {
 	// What kind of method calls I would intercept
 	// execution(* PACKAGE.*.*(..))
 	// Weaving & Weaver
-	@Before("execution(* com.test.madhu.ownApp.controller.*.*(..))")
+	@Before("execution(* com.test.jwt.ownApp.controller.*.*(..))")
 	public void before(JoinPoint joinPoint) {
 		// Advice
 		logger.info("Controller Allowed execution for {}", joinPoint);
 	}
 	
-	@Before("execution(* com.test.madhu.ownApp.*.*(..))")
+	@Before("execution(* com.test.jwt.ownApp.*.*(..))")
 	public void beforeJWT(JoinPoint joinPoint) {
 		// Advice
 		logger.info("Security Allowed execution for ####  {}", joinPoint);
