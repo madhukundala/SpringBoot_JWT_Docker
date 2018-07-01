@@ -17,6 +17,6 @@ public class AppController {
 	public ResponseEntity<String> getAppDetails(){
 	return new ResponseEntity<String>("These methods are working", HttpStatus.OK);	
 	}
-	
+		
 	
 }

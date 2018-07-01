@@ -1,7 +1,7 @@
 Application SpringBoot_JWT_Docker
 
 
-Currently we uses h2 DB as inmemory Database .
+Currently we uses h2 DB as inmemory Database . http://localhost:8080/h2-console
 To configure ur owm mysql db , can change the configurations in properties file 
 and to deploy in docker , can use the docker script where the app and mysql will be deployed in the docker container .
 
