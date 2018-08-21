@@ -41,7 +41,7 @@ import com.test.jwt.ownApp.util.ModelMapper;
 public class PollService {
 
     @Autowired
-    private PollRepository pollRepository;
+     PollRepository pollRepository;
 
     @Autowired
     private VoteRepository voteRepository;
@@ -249,7 +249,6 @@ public class PollService {
 
         Map<Long, Long> choiceVotesMap = votes.stream()
                 .collect(Collectors.toMap(ChoiceVoteCount::getChoiceId, ChoiceVoteCount::getVoteCount));
-
         return choiceVotesMap;
     }
 

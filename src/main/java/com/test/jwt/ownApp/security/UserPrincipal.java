@@ -13,7 +13,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.test.jwt.ownApp.modal.User;
 
 public class UserPrincipal implements UserDetails {
-    private Long id;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5234734230117332141L;
+
+	private Long id;
 
     private String name;
 

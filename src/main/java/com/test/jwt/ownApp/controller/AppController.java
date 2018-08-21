@@ -15,8 +15,8 @@ public class AppController {
 
 	@GetMapping("/checkApp")
 	public ResponseEntity<String> getAppDetails(){
-	return new ResponseEntity<String>("These methods are working", HttpStatus.OK);	
-	}
-		
+		return new ResponseEntity<String>("These methods are working", HttpStatus.OK);	
+		}
+			
 	
 }

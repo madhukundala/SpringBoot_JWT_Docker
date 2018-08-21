@@ -36,7 +36,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 	        web.ignoring().antMatchers("actuator/**","/v2/api-docs", "/configuration/ui", "/swagger-resources/**", "/configuration/security", "/swagger-ui.html", "/webjars/**","/h2-console/**");
 	    }
 	 
-	 @Autowired
+	    @Autowired
 	    CustomUserDetailsService customUserDetailsService;
 
 	    @Autowired
@@ -90,12 +90,13 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 	                        .antMatchers("/actuator/health").permitAll()
 	                        .antMatchers("/actuator/**").hasAuthority("R_0").antMatchers("/h2-console/**").permitAll()
 	                        .antMatchers("/h2-console/**").hasAuthority("R_0")
-	                    .antMatchers("/api/user/checkUsernameAvailability", "/api/user/checkEmailAvailability","/app/auth/signup","/app/auth/signin")
+	                        .antMatchers("/api/user/checkUsernameAvailability", "/api/user/checkEmailAvailability","/app/auth/signup","/app/auth/signin","/app/CheckApp")
 	                        .permitAll()
-	                    .antMatchers(HttpMethod.GET, "/api/polls/**", "/api/users/**")
+	                        .antMatchers(HttpMethod.GET, "/api/polls/**", "/api/users/**")
 	                        .permitAll()
-	                    .anyRequest()
-	                        .authenticated();
+	                        .anyRequest()
+	                        .authenticated().and()
+	                        .exceptionHandling().authenticationEntryPoint(unauthorizedHandler);
 
 	        // Add our custom JWT security filter
 	        http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
